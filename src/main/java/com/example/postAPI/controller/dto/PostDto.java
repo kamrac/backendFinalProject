@@ -1,42 +1,24 @@
-package com.example.postAPI.repository.entity;
-
-import com.example.postAPI.controller.dto.PostDto;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+package com.example.postAPI.controller.dto;
 
 import java.util.Date;
 
-@Entity
-public class Post {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+public class PostDto {
     private String title;
     private String author;
     private Date date;
     private String text;
     private String imageUrl;
 
-    public Post(PostDto postDto) {
-        this.title = postDto.getTitle();
-        this.author = postDto.getAuthor();
-        this.date = postDto.getDate();
-        this.text = postDto.getAuthor();
-        this.imageUrl = postDto.getImageUrl();
+    public PostDto(String title, String author, Date date, String text, String imageUrl) {
+
+        this.title = title;
+        this.author = author;
+        this.date = date;
+        this.text = text;
+        this.imageUrl = imageUrl;
     }
 
-    public Post() {
-    }
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
     public String getTitle() {
         return title;
@@ -77,4 +59,6 @@ public class Post {
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
     }
+
+
 }
