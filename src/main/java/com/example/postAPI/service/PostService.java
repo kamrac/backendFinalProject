@@ -39,4 +39,5 @@ public class PostService{
         Optional<Post> post = postRepository.findById(postId);
         return post.get();
     }
+
 }
