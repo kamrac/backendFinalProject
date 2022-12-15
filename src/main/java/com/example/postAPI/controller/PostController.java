@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 
 @RestController
-@RequestMapping("/post")
+@RequestMapping()
 public class PostController {
     private PostService postService;
     final PostRepository postRepository;
@@ -21,7 +21,7 @@ public class PostController {
         this.postService = postService;
     }
 
-    @GetMapping(path = "/all")
+    @GetMapping("api/post")
     public Iterable<Post> getPosts(){
         return postService.all();
     }
