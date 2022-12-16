@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 
 @RestController
+@CrossOrigin(origins = "*")
 @RequestMapping("/post")
 public class PostController {
     private PostService postService;
@@ -25,6 +26,8 @@ public class PostController {
     public Iterable<Post> getPosts(){
         return postService.all();
     }
+
+
     @PostMapping
     public Post save(@RequestBody PostDto postDto) {
         return postService.save(new Post(postDto));
@@ -50,4 +53,5 @@ public class PostController {
     {
         postService.delete(id);
     }
+
 }
